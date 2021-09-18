@@ -1,0 +1,1 @@
+Get-ADGroupMember ‘server-admins' -recursive| ft samaccountname| Out-File c:\ps\admins.csv
