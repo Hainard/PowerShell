@@ -1,0 +1,4 @@
+$fullTargetPath = "C:\Backup"
+$deleteFiles = Get-Childitem $fullTargetPath -Recurse | 
+    Where {$_.LastWriteTime -lt (Get-Date).AddDays(-30)} | 
+    Foreach { Remove-Item $_.FullName -Force -Recurse}

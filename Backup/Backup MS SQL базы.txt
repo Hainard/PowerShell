@@ -1,0 +1,8 @@
+Необходимо зайти в Microsoft SQL Server Management Studio, выбрать "Компонент Database Engine", ввести учетные данные. 
+В MS SQL Server Management Studio, запустить "Агент SQL Server", если не был запущен. Зайти в "Агент SQL Server"->"Задания" и создать задание. 
+В задание необходимо сделать шаг, в котором указать следующий код скрипта Transact-SQL (T-SQL):
+
+BACKUP DATABASE [ИМЯ_БАЗЫ_ДАННЫХ] TO  DISK = N'ПУТЬ_КУДА_СОХРАНИТЬ_АРХИВ' 
+WITH NOFORMAT, NOINIT,  
+NAME = N'КОММЕНТАРИЙ', SKIP, NOREWIND, NOUNLOAD,  STATS = 10
+GO
